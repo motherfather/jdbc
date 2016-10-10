@@ -12,7 +12,7 @@ public class AuthorDao {
 	public void insert(AuthorVo vo) {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
-//		Statement stmt = null;
+
 		try {
 			// 1. JDBC 드라이버 (Oracle) 로딩
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -22,7 +22,7 @@ public class AuthorDao {
 			conn = DriverManager.getConnection(url, "bitdb", "bitdb");
 
 			// 3. Statement 준비
-			String sql = "insert into book values(?, ?)";
+			String sql = "insert into author values(?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			
 			// 4. 바인딩
